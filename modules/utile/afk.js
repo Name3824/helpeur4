@@ -1,16 +1,16 @@
-function afk(message,prefix,client){
+function afk(msg,prefix,client){
     
     const fs = require("fs");
-    var message = message;
-     var mentionned = message.mentions.users.first();
+    var msg = msg;
+     var mentionned = msg.mentions.users.first();
     let afk = JSON.parse(fs.readFileSync("./afks.json", "utf8"));
-    if (message.content.startsWith(prefix + "delafk")){
-    if (afk[message.author.id]) {
-    delete afk[message.author.id];
-    if (message.member.nickname === null) {
-     message.channel.send("", {embed: {
+    if (msg.content.startsWith(prefix + "delafk")){
+    if (afk[msg.author.id]) {
+    delete afk[msg.author.id];
+    if (msg.member.nickname === null) {
+     msg.channel.send("", {embed: {
                    title: "Afk retour",
-                   color: 2067276, 
+                   color: 0xBB, 
     thumbnail: {
                            icon_url : client.user.avatarURL 
                         },
@@ -20,9 +20,9 @@ function afk(message,prefix,client){
                              }}).catch(console.error);
     
       }else{
-     message.channel.send("", {embed: {
+     msg.channel.send("", {embed: {
                    title: "Afk retour",
-                   color: 2067276, 
+                   color: 0xBB, 
     thumbnail: {
                             icon_url : client.user.avatarURL 
                         },
@@ -34,9 +34,9 @@ function afk(message,prefix,client){
       }
     fs.writeFile("./afks.json", JSON.stringify(afk), (err) => { if (err) console.error(err);});
     }else{
-     message.channel.send("", {embed: {
+     msg.channel.send("", {embed: {
                    
-                   color: 15158332, 
+                   color: 0xBB, 
     thumbnail: {
                            icon_url : client.user.avatarURL 
                         },
@@ -49,11 +49,11 @@ function afk(message,prefix,client){
     }
     
     
-    if (message.content.startsWith(prefix + "afk")||message.content === prefix + "afk") {
-    if (afk[message.author.id]) {
-    return  message.channel.send("", {embed: {
+    if (msg.content.startsWith(prefix + "afk")||msg.content === prefix + "afk") {
+    if (afk[msg.author.id]) {
+    return  msg.channel.send("", {embed: {
                    
-                   color: 15158332, 
+                   color: 0xBB, 
     thumbnail: {
                            icon_url : client.user.avatarURL 
                         },
@@ -64,67 +64,68 @@ function afk(message,prefix,client){
     
       
     }else{
-    let args1 = message.content.split(" ").slice(1);
+    let args1 = msg.content.split(" ").slice(1);
     if (args1.length === 0) {
-    afk[message.author.id] = {"reason" : true};
-    message.delete();
-    message.channel.send("", {embed: {
+    afk[msg.author.id] = {"reason" : true};
+    msg.delete();
+    msg.channel.send("", {embed: {
                    
-                   color: 15158332, 
+                   color: 0xBB, 
     thumbnail: {
                            icon_url : client.user.avatarURL 
                         },
                         
                            description: " tu es désormais afk, met `<delafk` pour enlever ton afk"
-                          }}).catch(console.error);
-                          
-                            
-                          }
-                          else{
-                          afk[message.author.id] = {"reason" : args1.join(" ")};
-                          message.delete();
-                          message.channel.send("", {embed: {
-                                         
-                                         color: 15158332,
-                          thumbnail: {
-                                                 icon_url : client.user.avatarURL
-                                              },
-                                              
-                                                 description: " tu es désormais afk, met `<delafk` pour enlever ton afk"
-                          
-                                                   }}).catch(console.error);
-                          }
-                          fs.writeFile("./afks.json", JSON.stringify(afk), (err) => { if (err) console.error(err);});
-                          }
-                          }
-                              
-                              var mentionned = message.mentions.users.first();
-                          if(message.mentions.users.size > 0) {
-                          if (afk[message.mentions.users.first().id]) {
-                          if (afk[message.mentions.users.first().id].reason === true) {
-                           message.channel.send("", {embed: {
-                                         author: {
-                                                          name: ""+ mentionned.username + " est afk",
-                                                          icon_url: mentionned.avatarURL
-                                                      },
-                                         color: 15158332,
-                                                 description: ``
-                          
-                                                   }}).catch(console.error);
-                          }else{
-                           message.channel.send("", {embed: {
-                                         author: {
-                                                          name: ""+ mentionned.username + " est afk",
-                                                          icon_url: mentionned.avatarURL
-                                                      },
-                                         color: 15158332,
-                                                 description: `${afk[message.mentions.users.first().id].reason}`
-                          
-                                                   }}).catch(console.error);
-                          
-                            
-                          }
-                          }
-                          }
-                          }
-  module.exports = afk
+    
+                             }}).catch(console.error);
+    
+      
+    }
+    else{
+    afk[msg.author.id] = {"reason" : args1.join(" ")};
+    msg.delete();
+    msg.channel.send("", {embed: {
+                   
+                   color: 0xBB,
+    thumbnail: {
+                           icon_url : client.user.avatarURL
+                        },
+                        
+                           description: " tu es désormais afk, met `<delafk` pour enlever ton afk"
+    
+                             }}).catch(console.error);
+    }
+    fs.writeFile("./afks.json", JSON.stringify(afk), (err) => { if (err) console.error(err);});
+    }
+    }
+        
+        var mentionned = msg.mentions.users.first();
+    if(msg.mentions.users.size > 0) {
+    if (afk[msg.mentions.users.first().id]) {
+    if (afk[msg.mentions.users.first().id].reason === true) {
+     msg.channel.send("", {embed: {
+                   author: {
+                                    name: ""+ mentionned.username + " est afk",
+                                    icon_url: mentionned.avatarURL
+                                },
+                   color: 0xBB,
+                           description: ``
+    
+                             }}).catch(console.error);
+    }else{
+     msg.channel.send("", {embed: {
+                   author: {
+                                    name: ""+ mentionned.username + " est afk",
+                                    icon_url: mentionned.avatarURL
+                                },
+                   color: 0xBB,
+                           description: `${afk[msg.mentions.users.first().id].reason}`
+    
+                             }}).catch(console.error);
+    
+      
+    }
+    }
+}
+}
+module.exports = afk;
