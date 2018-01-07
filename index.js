@@ -311,58 +311,6 @@ var embed = new Discord.RichEmbed()
 } 	    
 });
 
-app.listen(5000);
-var AwaitingPlayer = [];
-
-
-const createrole = require('./modules/adminstrateur/createrole.js');
-const delchannel = require('./modules/adminstrateur/delchannel.js');
-
-
-const addrole = require('./modules/moderation/addrole.js');
-const ban = require('./modules/moderation/ban.js');
-const kick = require('./modules/moderation/kick.js');
-const mute = require('./modules/moderation/mute.js');
-const unmute = require('./modules/moderation/unmute.js');
-const rmrole = require('./modules/moderation/rmrole.js');
-const role = require('./modules/moderation/role.js');
-const purge = require('./modules/moderation/purge.js');
-
-const admin = require("./modules/owner/admin.js");
-
-
-const afk = require("./modules/utile/afk.js");
-const hafk = require("./modules/utile/hafk.js");
-const helps = require("./modules/utile/helps.js");
-
-client.on('message', msg => {
-  if (msg.channel.type != "dm") {
-   
-   createrole(msg, prefix, client)
-   delchannel(msg, prefix, client)
-
-   rmrole(msg, prefix, client) 
-   addrole(msg, prefix, client)
-   ban(msg, prefix, client)
-   kick(msg, prefix, client)
-   mute(msg, prefix, client)
-   purge(msg, prefix, client)
-   unmute(msg, prefix, client)
-
-   admin(msg, prefix, client)
-   role(msg, prefix, client)
-
-
-   afk(msg, prefix, client)
-   hafk(msg, prefix, client)
-   helps(msg, prefix, client)
-   
-
-   
-   
-  }
-});
-
 client.on("ready", () => {
   
   
@@ -468,7 +416,7 @@ var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) 
             member.user.send("Salut " + member.user.username + " bienvenue dans notre communautée !\nVoici les règles que tu auras à suivre dans nôtre serveur:\n\n**1. Pub interdit sous peine de kick ou de ban\n2. Merci de ne pas dire d'insulte \n3. Pas de spam ou de Majuscule \n4. Tout message de vente sera supprimer et vous serrez kick\n6. C'est un serveur sérieux, les non sérieux sont priés de s'abstenir\nLe manque de respecte d’une de c’est règle sera sanctionner plus a moins selon la gravité de l’acte.**");
             member.send("Bienvenue" +member.user.username + "** Copie et colle le code dans <#384733478769655809> \n```/" + captcha + "```");
             member.user.id;
-            channel.send("❤️Bienvenue ❤️ " + member +  " sur " +member.guild.name+ "❤️passe un bon moment à faire de rencontre❤️");
+            channel.send("Bienvenue  " + member +  " sur " +member.guild.name+ "passe un bon moment avec nous");
           });
       
           client.on('guildMemberRemove', member => {
@@ -476,7 +424,7 @@ var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) 
             if(!channel) {
                 return;
             }
-                    channel.send( "💔oh non pourquoi tu est partie💔" +member+  " à quitté " +member.guild.name+ "💔revient vite💔");
+                    channel.send( "oh non pourquoi tu est partie" +member+  " à quitté " +member.guild.name+ "revient vite");
         })
               
     
