@@ -54,7 +54,7 @@ function helps(msg,prefix,client){
                       ],
                       footer: {
                           icon_url: client.user.avatarURL,
-                          text: "©️ Chtigaming And Moding"
+                          text: "©️ TutoRapide"
                         }
                   }
               })
@@ -180,7 +180,7 @@ function helps(msg,prefix,client){
     }],
   },
    footer: {
-       text : '©️ Chtigaming And Moding'
+       text : '©️ TutoRapide'
     }
   })
   
@@ -213,7 +213,7 @@ function helps(msg,prefix,client){
             ],
             footer: {
                 icon_url: client.user.avatarURL,
-                text: "©️ Chtigaming And Moding"
+                text: "©️ TutoRapide"
               }
         }
     })
