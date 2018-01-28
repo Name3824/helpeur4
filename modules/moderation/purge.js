@@ -50,4 +50,4 @@ function purge(msg,prefix,client){
       }
     }
   }
-ule.exports = purge;
+module.exports = purge;
