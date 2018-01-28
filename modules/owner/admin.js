@@ -1,6 +1,6 @@
 function admin(msg,prefix,client){      
         if (msg.content.startsWith(prefix + "setgame")) {
-            if (msg.author.id != '137569112556699649') {return msg.reply("Vous n'avez pas la permission d'utiliser cette commande!")
+            if (msg.author.id != '320923152576282624') {return msg.reply("Vous n'avez pas la permission d'utiliser cette commande!")
             } else {
                 var game = msg.content.substr(10);
                 msg.delete(msg.author)
