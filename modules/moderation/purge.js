@@ -3,9 +3,9 @@ function purge(msg,prefix,client){
   if (msg.content.startsWith(prefix + "purge")) {
     if (msg.channel.type === "dm") return;
     console.log('**' + msg.author.tag + '** a utilisé la commande `h!purge` dans le serveur: **'+msg.guild.name+'**, **Owner: **'+msg.guild.owner.user.username+', **Nombre de membres: **'+msg.guild.memberCount);
-        let modRole = msg.guild.roles.find("name", "Mod");
-                if(!msg.guild.roles.exists("name", "Mod")) {
-            return  msg.channel.send("**:x: The **Mod** role does not exist in this server!**");
+        let modRole = msg.guild.roles.find("name", "Staff");
+                if(!msg.guild.roles.exists("name", "Staff")) {
+            return  msg.channel.send("**:x: The **Staff** role does not exist in this server!**");
           } 
           if(!msg.member.roles.has(modRole.id)) {
             return   msg.channel.send("**:x: You do not have a permission**");
@@ -50,5 +50,4 @@ function purge(msg,prefix,client){
       }
     }
   }
-
-module.exports = purge;
+ule.exports = purge;
