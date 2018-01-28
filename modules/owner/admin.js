@@ -9,7 +9,7 @@ function admin(msg,prefix,client){
         }
 
        /* if(msg.content.startsWith(prefix + 'rename')){
-            if(msg.author.id == "137569112556699649"){
+            if(msg.author.id == "320923152576282624"){
                 client.user.setUsername(msg.content.substr(8));
             } else {
                 msg.channel.send("You do not have permission to use this command!")
