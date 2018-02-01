@@ -1,5 +1,5 @@
 function role(msg,prefix,client){
-    var roleme = ['Joueur Build','Joueur Faction,'Joueur DayZ'];
+    var roleme = ['Homme','Femme','celibataire','En couple'];
     if(msg.content.startsWith(prefix + "role")){
         msg.delete();
         var searchrole = msg.content.slice(msg.content.indexOf(msg.content.split(" ")[1]));						
