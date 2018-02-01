@@ -48,7 +48,7 @@ function helps(msg,prefix,client){
                       color: Math.floor(Math.random()*16777216),
                       fields: [{
                           name: "Les **Rôles** Disponible sur le serveur",
-                          value: "Liste des rôles\nJoueur DayZ\nJoueur Faction\nJoueur Build\\n```/role Joueur DayZ```\n```/role Joueur Faction```\n```/role Joueur Build```",
+                          value: "Liste des rôles\nJoueur DayZ\nJoueur Faction\nJoueur DayZ\n```/role Joueur DayZ```\n```/role Joueur Faction```\n```/role Joueur Build```",
                           inline : true
                         },
                       ],
