@@ -48,13 +48,13 @@ function helps(msg,prefix,client){
                       color: Math.floor(Math.random()*16777216),
                       fields: [{
                           name: "Les **Rôles** Disponible sur le serveur",
-                          value: "Liste des rôles\nCelibataire\nEn couple\nFemme\nHomme\nNSFW \n \n Pour avoir un de ces rôle il te faut faire la commannde \n```/role celibataire```\n```/role en couple```\n```/role Femme```\n```/role Homme```\n```le role 🔞NSFW sur demande``` **Àges conseillé 18 ans**",
+                          value: "Liste des rôles\nJoueur DayZ\nJoueur Faction\nJoueur Build\\ n\n```/role Joueur DayZ```\n```/role Joueur Faction```\n```/role Joueur Build```",
                           inline : true
                         },
                       ],
                       footer: {
                           icon_url: client.user.avatarURL,
-                          text: "©️ TutoRapide"
+                          text: "©️ Chtigaming And Moding"
                         }
                   }
               })
@@ -104,7 +104,7 @@ function helps(msg,prefix,client){
         ],
             },
              footer: {
-                 text : '©️ TutoRapide'
+                 text : '©️ Chtigaming And Moding'
               }
           })
       }
@@ -180,7 +180,7 @@ function helps(msg,prefix,client){
     }],
   },
    footer: {
-       text : '©️ TutoRapide'
+       text : '©️ Chtigaming And Moding'
     }
   })
   
@@ -213,7 +213,7 @@ function helps(msg,prefix,client){
             ],
             footer: {
                 icon_url: client.user.avatarURL,
-                text: "©️ TutoRapide"
+                text: "©️ Chtigaming And Moding"
               }
         }
     })
