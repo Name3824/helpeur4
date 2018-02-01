@@ -3,8 +3,8 @@ function rmrole(msg,prefix,client){
         if (msg.channel.type === "dm") return;
         console.log('**' + msg.author.tag + '** a utilisé la commande `h!rmrole` dans le serveur: **'+msg.guild.name+'**, **Owner: **'+msg.guild.owner.user.username+', **Nombre de membres: **'+msg.guild.memberCount);
         let modRole = msg.guild.roles.find("name", "Mod");
-                    if(!msg.guild.roles.exists("name", "Mod")) {
-                return  msg.channel.send("**:x: Le role **Mod** n'existe pas dans dans ce serveur!**");
+                    if(!msg.guild.roles.exists("name", "Administration")) {
+                return  msg.channel.send("**:x: Le role **Administration** n'existe pas dans dans ce serveur!**");
               if(!msg.member.roles.has(modRole.id)) {
                 return   msg.channel.send("**:x: Vous n'avez visiblement pas la permission d'utilisez cette commande**");
         }
