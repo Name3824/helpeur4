@@ -468,7 +468,7 @@ var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) 
             member.user.send("Salut " + member.user.username + " bienvenue dans notre communautée !\nVoici les règles que tu auras à suivre dans nôtre serveur:\n\n**1. Pub interdit sous peine de kick ou de ban\n2. Merci de ne pas dire d'insulte \n3. Pas de spam ou de Majuscule \n4. Tout message de vente sera supprimer et vous serrez kick\n6. C'est un serveur sérieux, les non sérieux sont priés de s'abstenir\nLe manque de respecte d’une de c’est règle sera sanctionner plus a moins selon la gravité de l’acte.**");
             member.send("Bienvenue" +member.user.username + "** Copie et colle le code dans <#384733478769655809> \n```/" + captcha + "```");
             member.user.id;
-            channel.send("❤️Bienvenue ❤️ " + member +  " sur " +member.guild.name+ "❤️passe un bon moment à faire de rencontre❤️");
+            channel.send("Bienvenue " + member +  " sur " +member.guild.name+ "passe un bon moment avec nous");
           });
       
           client.on('guildMemberRemove', member => {
@@ -476,7 +476,7 @@ var captcha = String(Math.random()).charAt(4) + String(Math.random()).charAt(4) 
             if(!channel) {
                 return;
             }
-                    channel.send( "💔oh non pourquoi tu est partie💔" +member+  " à quitté " +member.guild.name+ "💔revient vite💔");
+                    channel.send( "oh non pourquoi tu est partie" +member+  " à quitté " +member.guild.name+ "revient vite");
         })
               
     
